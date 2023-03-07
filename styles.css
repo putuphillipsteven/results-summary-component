@@ -1,6 +1,8 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Lato", sans-serif;
+  box-sizing: border-box;
 }
 body {
   background-color: hsl(0, 0%, 86%);
@@ -8,7 +10,6 @@ body {
   padding: 0;
   max-width: 1440px;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
@@ -31,47 +32,147 @@ section.result-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 16px;
+  padding: 32px;
   text-align: center;
   align-items: center;
   color: white;
 }
-
+section.result-container > h6 {
+  font-size: 14px;
+  opacity: 0.7;
+}
 section.result-point {
   background: linear-gradient(hsla(256, 72%, 46%, 1), hsla(241, 72%, 46%, 0));
-  height: 100px;
-  width: 100px;
+  height: 120px;
+  width: 120px;
+  padding: 40px;
+  font-size: 32px;
+  font-weight: 700;
   border-radius: 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
 
+section.result-point > h3 {
+  font-weight: 100;
+  font-size: 12px;
+}
+
+section h5 {
+  font-size: 18px;
+}
+section p {
+  font-size: 12px;
+  width: 70%;
+}
 section.summary-main {
   width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  padding: 32px;
+  justify-content: space-between;
 }
 
 .summary-header {
+  width: 90%;
+  left: 0;
 }
 .summary-list-container {
-  width: 80%;
-  height: 60%;
+  width: 90%;
+  height: 180px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-items: center;
 }
 .summary-list {
   display: flex;
   align-items: center;
   padding: 0 8px;
   border-radius: 8px;
-  margin: 8px 0;
-  height: 32px;
+  margin: 4px;
+  height: 56px;
   justify-content: space-between;
-  width: 93%;
+  width: 100%;
   background-color: lightblue;
+}
+
+.summary-list section {
+  display: flex;
+  align-items: center;
+  width: 75px;
+}
+
+.summary-list section h6 {
+  margin-left: 16px;
+}
+
+#reaction > section {
+  color: hsl(0, 100%, 67%);
+}
+#memory > section {
+  color: hsl(39, 100%, 56%);
+}
+#verbal > section {
+  color: hsl(166, 100%, 37%);
+}
+#visual > section {
+  color: hsl(234, 85%, 45%);
+}
+.summary-list#reaction {
+  background-color: hsl(0, 100%, 67%, 0.2);
+}
+.summary-list#memory {
+  background-color: hsl(39, 100%, 56%, 0.2);
+}
+.summary-list#verbal {
+  background-color: hsl(166, 100%, 37%, 0.2);
+}
+.summary-list#visual {
+  background-color: hsl(234, 85%, 45%, 0.2);
+}
+
+section > .summary-button > input {
+  background-color: hsl(224, 30%, 27%);
+  color: white;
+  text-align: center;
+  border-radius: 32px;
+  height: 36px;
+  width: 200px;
+  border: none;
+  cursor: pointer;
+}
+
+section > .summary-button > input:hover {
+  background: linear-gradient(hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+}
+
+@media all and (max-width: 600px) {
+  body {
+    height: 100vh;
+  }
+  main.result-main {
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+  }
+  section.result-container {
+    width: 100%;
+    height: 40%;
+    border-radius: 0 0 32px 32px;
+  }
+  section.summary-main {
+    width: 100%;
+    height: 60%;
+  }
+  section.summary-list-container {
+    padding: 16px 0;
+    height: 80%;
+    justify-content: space-between;
+  }
+  section.summary-main input {
+    height: 48px;
+    width: 280px;
+  }
 }
